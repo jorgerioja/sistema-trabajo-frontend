@@ -25,14 +25,14 @@ export class LoginComponent implements OnInit {
 
   formSubmit(){
     if(this.loginData.username.trim()==''|| this.loginData.username.trim()==null){
-      this.snack.open('El nombre es requerido!!', 'Aceptar', {
+      this.snack.open('Ingrese su nombre!!', 'Aceptar', {
         duration:3000
       })
       return;
     }
 
     if(this.loginData.password.trim()==''|| this.loginData.password.trim()==null){
-      this.snack.open('La contraseña es requerida!!', 'Aceptar', {
+      this.snack.open('Ingrese su contraseña!!', 'Aceptar', {
         duration:3000
       })
       return;
