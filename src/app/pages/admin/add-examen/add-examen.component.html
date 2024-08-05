@@ -1,72 +1,94 @@
-<mat-card>
-  <h1>Agregar nuevo test</h1>
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <form (ngSubmit) = "guardarCuestionario()">
-        <mat-form-field class="w100" appearance="fill">
-          <mat-label>Título</mat-label>
+<mat-card class="m-4 p-6">
+  <h1 class="text-2xl font-bold mb-4">Agregar nuevo test</h1>
+  <div class="flex justify-center">
+    <div class="w-full max-w-lg">
+      <form (ngSubmit)="guardarCuestionario()">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="titulo">
+            Título
+          </label>
           <input
-          [(ngModel)] = "examenData.titulo"
-          type="text"
-          name="titulo"
-          required
-          placeholder="Digite el título"
-          matInput>
-        </mat-form-field>
-        <mat-form-field class="w100" appearance="fill">
-          <mat-label>Descripción</mat-label>
+            [(ngModel)]="examenData.titulo"
+            type="text"
+            id="titulo"
+            name="titulo"
+            required
+            placeholder="Digite el título"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">
+            Descripción
+          </label>
           <textarea
-          [(ngModel)] = "examenData.descripcion"
-          type="text"
-          name="descripcion"
-          placeholder="Digite la descripción"
-          matInput
-          rows="8"></textarea>
-        </mat-form-field>
-
-        <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="w100" appearance="fill">
-              <mat-label>Puntos máximos</mat-label>
-              <input
-              [(ngModel)] = "examenData.puntosMaximos"
+            [(ngModel)]="examenData.descripcion"
+            id="descripcion"
+            name="descripcion"
+            placeholder="Digite la descripción"
+            rows="8"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></textarea>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="puntosMaximos">
+              Puntos máximos
+            </label>
+            <input
+              [(ngModel)]="examenData.puntosMaximos"
               type="text"
+              id="puntosMaximos"
               name="puntosMaximos"
               placeholder="Digite la cantidad de puntos"
-              matInput>
-            </mat-form-field>
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
           </div>
-          <div class="col-md-6">
-            <mat-form-field class="w100" appearance="fill">
-              <mat-label>Número de preguntas</mat-label>
-              <input
-              [(ngModel)] = "examenData.numeroDePreguntas"
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="numeroDePreguntas">
+              Número de preguntas
+            </label>
+            <input
+              [(ngModel)]="examenData.numeroDePreguntas"
               type="text"
+              id="numeroDePreguntas"
               name="numeroDePreguntas"
               placeholder="Digite el número de preguntas"
-              matInput>
-            </mat-form-field>
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
           </div>
         </div>
 
-        <mat-slide-toggle class="mt20" name = "activo" [(ngModel)] = "examenData.activo" color="primary">
-          Estado de publicación
-        </mat-slide-toggle>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            Estado de publicación
+          </label>
+          <input type="checkbox" [(ngModel)]="examenData.activo" id="activo" name="activo" class="mr-2 leading-tight">
+          <label for="activo" class="text-sm text-gray-700">Activo</label>
+        </div>
 
-        <mat-form-field appearance="fill" class="mt20 w100">
-          <mat-label>Categorías</mat-label>
-          <mat-select name="categoria" [(ngModel)] = "examenData.categoria.categoriaId">
-            <mat-option *ngFor = "let c of categorias" [value] = "c.categoriaId">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="categoria">
+            Categorías
+          </label>
+          <select
+            id="categoria"
+            name="categoria"
+            [(ngModel)]="examenData.categoria.categoriaId"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option *ngFor="let c of categorias" [value]="c.categoriaId">
               {{ c.titulo }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+            </option>
+          </select>
+        </div>
 
-        <div class="container text-center">
-          <button mat-raised-button color="primary">Guardar</button>
+        <div class="text-center mt-6">
+          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Guardar
+          </button>
         </div>
       </form>
     </div>
   </div>
 </mat-card>
-
