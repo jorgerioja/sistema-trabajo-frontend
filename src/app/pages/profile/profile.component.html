@@ -1,47 +1,46 @@
-<mat-card style="margin-left: 10px;">
-  <h1>Detalles del perfil</h1>
+<mat-card class="m-4 p-6">
+  <h1 class="text-2xl font-bold mb-4">Detalles del perfil</h1>
   <mat-card-content>
-    <div class = "bootstrap-wrapper">
-      <div class = "container">
-        <div class = "text-center">
-          <img
+    <div class="container mx-auto">
+      <div class="text-center mb-6">
+        <img
           src="../../../assets/usuario.png"
           alt=""
-          class = "profile-image">
-
-          <h1 class="mt20">{{ user.nombre }} {{ user.apellido }}</h1>
-        </div>
-        <div class = "row">
-          <div class = "col-md-10 offset-md-1">
-            <table class = "table text-center">
-              <tr>
-                <td>Nombre de usuario</td>
-                <td>{{ user.username }}</td>
+          class="w-24 h-24 rounded-full mx-auto mb-4">
+        <h1 class="text-xl font-semibold">{{ user.nombre }} {{ user.apellido }}</h1>
+      </div>
+      <div class="flex justify-center">
+        <div class="w-full sm:w-2/3 lg:w-1/2">
+          <table class="table-auto w-full text-left border-collapse">
+            <tbody>
+              <tr class="border-b">
+                <td class="py-2 px-4 font-medium">Nombre de usuario</td>
+                <td class="py-2 px-4">{{ user.username }}</td>
               </tr>
-              <tr>
-                <td>ID</td>
-                <td>{{ user.id }}</td>
+              <tr class="border-b">
+                <td class="py-2 px-4 font-medium">ID</td>
+                <td class="py-2 px-4">{{ user.id }}</td>
               </tr>
-              <tr>
-                <td>Teléfono</td>
-                <td>{{ user.telefono }}</td>
+              <tr class="border-b">
+                <td class="py-2 px-4 font-medium">Teléfono</td>
+                <td class="py-2 px-4">{{ user.telefono }}</td>
               </tr>
-              <tr>
-                <td>Rol</td>
-                <td>{{ user.authorities[0].authority }}</td>
+              <tr class="border-b">
+                <td class="py-2 px-4 font-medium">Rol</td>
+                <td class="py-2 px-4">{{ user.authorities[0].authority }}</td>
               </tr>
-              <tr>
-                <td>Estado</td>
-                <td>{{ user.enabled ? "Activo" : "No activo"}}</td>
+              <tr class="border-b">
+                <td class="py-2 px-4 font-medium">Estado</td>
+                <td class="py-2 px-4">{{ user.enabled ? "Activo" : "No activo"}}</td>
               </tr>
-            </table>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
+      <div class="text-center mt-6">
+        <button mat-raised-button color="primary" class="mx-2">Actualizar</button>
+        <button mat-raised-button color="accent" class="mx-2">Compartir</button>
+      </div>
     </div>
-    <mat-card-actions class = "text-center">
-      <button mat-raised-button color = "primary">Actualizar</button>
-      <button mat-raised-button color = "accent">Compartir</button>
-    </mat-card-actions>
   </mat-card-content>
 </mat-card>

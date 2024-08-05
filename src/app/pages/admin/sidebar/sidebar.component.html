@@ -1,46 +1,47 @@
-<div class="container">
-  <div class="sidebar">
-    <mat-card>
+<!-- Sidebar -->
+<button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="inline-flex items-center p-2  ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+  <span class="sr-only">Open sidebar</span>
+  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+  </svg>
+</button>
+<aside id="separator-sidebar" class="fixed top-16 left-0 z-40 w-64 h-[calc(100vh-4rem)] transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+  <div class="h-full px-3 py-4 overflow-y-auto bg-white shadow-md dark:bg-gray-800">
+    <div class="p-4">
+      <img src="../../../../assets/logo.jpeg" alt="Logo" class="w-32 mx-auto">
+    </div>
+    <mat-card class="rounded-none shadow-none">
       <mat-action-list>
-
-          <mat-action-list>
-            <div mat-subheader>Menu</div>
-            <button routerLink = "/admin" mat-list-item>
-              <mat-icon mat-list-icon>home</mat-icon> Inicio
-            </button>
-            <button mat-list-item routerLink = "/admin/profile">
-              <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
-            </button>
-            <button mat-list-item routerLink = "/admin/categorias">
-              <mat-icon mat-list-icon>list</mat-icon>Categorías
-            </button>
-            <button mat-list-item routerLink = "/admin/add-categoria">
-              <mat-icon mat-list-icon>add_circle_outline</mat-icon>Agregar categoría
-            </button>
-            <button mat-list-item routerLink = "/admin/examenes">
-              <mat-icon mat-list-icon>quiz</mat-icon>Cuestionarios/Tests
-            </button>
-            <button mat-list-item routerLink = "/admin/add-examen">
-              <mat-icon mat-list-icon>add</mat-icon>Agregar cuestionario
-            </button>
-            <button mat-list-item (click) = "logout()">
-              <mat-icon mat-list-icon>logout</mat-icon>Salir
-            </button>
-          </mat-action-list>
-
+        <div mat-subheader class="text-lg font-semibold text-gray-700">Menu</div>
+        <button routerLink="/admin" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>home</mat-icon>
+          <span>Inicio</span>
+        </button>
+        <button routerLink="/admin/profile" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <span>Perfil</span>
+        </button>
+        <button routerLink="/admin/categorias" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>list</mat-icon>
+          <span>Categorías</span>
+        </button>
+        <button routerLink="/admin/add-categoria" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>add_circle_outline</mat-icon>
+          <span>Agregar categoría</span>
+        </button>
+        <button routerLink="/admin/examenes" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>quiz</mat-icon>
+          <span>Cuestionarios/Tests</span>
+        </button>
+        <button routerLink="/admin/add-examen" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>add</mat-icon>
+          <span>Agregar cuestionario</span>
+        </button>
+        <button (click)="logout()" mat-list-item class="flex items-center space-x-2 hover:bg-gray-100 p-2 rounded-md transition">
+          <mat-icon mat-list-icon>logout</mat-icon>
+          <span>Salir</span>
+        </button>
       </mat-action-list>
     </mat-card>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
+</aside>

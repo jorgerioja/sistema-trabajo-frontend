@@ -1,39 +1,44 @@
-<mat-card>
-  <h1>Agregar nueva categoría</h1>
+<mat-card class="m-4 p-6">
+  <h1 class="text-2xl font-bold mb-4">Agregar nueva categoría</h1>
   <mat-card-content>
-    <div class="bootstrap-wrapper">
-      <div class="row">
-        <div class="col-md-8 offset-md-3">
-          <form (ngSubmit)= "formSubmit()">
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Titulo</mat-label>
-              <input
+    <div class="flex justify-center">
+      <div class="w-full max-w-lg">
+        <form (ngSubmit)="formSubmit()">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="titulo">
+              Título
+            </label>
+            <input
               required
               autofocus
               type="text"
+              id="titulo"
               name="titulo"
-              matInput
               placeholder="Digite el título de la categoría"
-              [(ngModel)] = "categoria.titulo"
-              >
-            </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Descripción</mat-label>
-              <textarea
+              [(ngModel)]="categoria.titulo"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="descripcion">
+              Descripción
+            </label>
+            <textarea
+              id="descripcion"
               name="descripcion"
-              matInput
               placeholder="Digite la descripción de la categoría"
-              rows="15"
-              [(ngModel)] = "categoria.descripcion"
-              >
-              </textarea>
-            </mat-form-field>
+              rows="5"
+              [(ngModel)]="categoria.descripcion"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            ></textarea>
+          </div>
 
-            <div class="container text-center mt15">
-              <button mat-raised-button color="primary">Guardar</button>
-            </div>
-          </form>
-        </div>
+          <div class="text-center mt-6">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              Guardar
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </mat-card-content>
