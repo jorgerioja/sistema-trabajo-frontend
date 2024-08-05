@@ -5,19 +5,19 @@
       <h1 class="text-2xl font-bold">Inicio de sesión</h1>
     </div>
     <form (ngSubmit)="formSubmit()">
-      <mat-form-field class="w-full" appearance="outline">
-        <mat-label>Nombre de usuario</mat-label>
-        <input [(ngModel)]="loginData.username" name="username" required matInput placeholder="Digite su nombre de usuario">
-        <mat-hint>El nombre de usuario debe ser válido</mat-hint>
-      </mat-form-field>
-      <mat-form-field class="w-full" appearance="outline">
-        <mat-label>Contraseña</mat-label>
-        <input [(ngModel)]="loginData.password" name="password" required type="password" matInput placeholder="Digite su contraseña">
-        <mat-hint>La contraseña debe ser válida</mat-hint>
-      </mat-form-field>
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">Nombre de usuario</label>
+        <input id="username" [(ngModel)]="loginData.username" name="username" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite su nombre de usuario">
+        <p class="mt-2 text-sm text-gray-600">El nombre de usuario debe ser válido</p>
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input id="password" [(ngModel)]="loginData.password" name="password" type="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite su contraseña">
+        <p class="mt-2 text-sm text-gray-600">La contraseña debe ser válida</p>
+      </div>
       <div class="flex justify-between mt-6">
-        <button mat-raised-button color="primary" class="w-1/2 mr-2">Iniciar sesión</button>
-        <button type="reset" mat-raised-button color="accent" class="w-1/2 ml-2">Limpiar</button>
+        <button type="submit" class="w-1/2 mr-2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Iniciar sesión</button>
+        <button type="reset" class="w-1/2 ml-2 bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-700 transition duration-300">Limpiar</button>
       </div>
     </form>
   </div>
