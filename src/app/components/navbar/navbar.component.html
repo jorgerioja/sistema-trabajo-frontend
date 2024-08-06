@@ -7,17 +7,17 @@
   </div>
 
   <div class="flex items-center space-x-4">
-    <a *ngIf="!login.isLoggedIn()" [routerLink]="'/login'" mat-button class="text-white">
+    <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-button class="text-white">
       Iniciar sesión
     </a>
-    <a *ngIf="!login.isLoggedIn()" [routerLink]="'/signup'" mat-button class="text-white">
+    <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-button class="text-white">
       Registrar
     </a>
-    <button *ngIf="login.isLoggedIn()" (click)="logout()" mat-button class="text-white">
+    <button *ngIf="isLoggedIn" (click)="logout()" mat-button class="text-white">
       Cerrar sesión
     </button>
-    <button *ngIf="login.isLoggedIn()" mat-button routerLink="/admin/profile" class="text-white">
-      {{ login.getUser().username }}
+    <button *ngIf="isLoggedIn" mat-button routerLink="/admin/profile" class="text-white">
+      {{ user?.username }}
     </button>
   </div>
 </mat-toolbar>

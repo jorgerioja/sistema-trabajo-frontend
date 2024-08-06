@@ -1,5 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, AfterViewChecked } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
@@ -9,71 +8,68 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent implements OnInit, AfterViewChecked {
   loginData = {
-    "username" : '',
-    "password" : ''
+    "username": '',
+    "password": ''
+  };
 
+  constructor(
+    private snack: MatSnackBar,
+    private loginService: LoginService,
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) { }
+
+  ngOnInit(): void { }
+
+  ngAfterViewChecked(): void {
+    this.cdr.detectChanges();
   }
 
-  constructor(private snack:MatSnackBar, private loginService:LoginService, private router:Router){}
-
-  ngOnInit(): void {
-
-  }
-
-  formSubmit(){
-    if(this.loginData.username.trim()==''|| this.loginData.username.trim()==null){
+  formSubmit() {
+    if (this.loginData.username.trim() == '' || this.loginData.username.trim() == null) {
       this.snack.open('Ingrese su nombre!!', 'Aceptar', {
-        duration:3000
-      })
+        duration: 3000
+      });
       return;
     }
 
-    if(this.loginData.password.trim()==''|| this.loginData.password.trim()==null){
+    if (this.loginData.password.trim() == '' || this.loginData.password.trim() == null) {
       this.snack.open('Ingrese su contraseña!!', 'Aceptar', {
-        duration:3000
-      })
+        duration: 3000
+      });
       return;
     }
 
     this.loginService.generateToken(this.loginData).subscribe(
-      (data:any) => {
+      (data: any) => {
         console.log(data);
         this.loginService.loginUser(data.token);
-        this.loginService.getCurrentUser().subscribe((user:any)=>{
+        this.loginService.getCurrentUser().subscribe((user: any) => {
           this.loginService.setUser(user);
           console.log(user);
-          if (this.loginService.getUserRole()=="ADMIN"){
-            //dashboard ADMIN
-            window.location.href = "/admin";
-            //this.router.navigate(['admin']);
-            this.loginService.loginStatusSubjec.next(true);
-
-
-          }else if(this.loginService.getUserRole()=="BASICO"){
-            //user dashboard
-            window.location.href = "/user-dashboard";
-            //this.router.navigate(['user-dashboard']);
-            this.loginService.loginStatusSubjec.next(true);
-
-
-
-          }
-          else{
-            this.loginService.logout();
-          }
-        })
-
-      },(error)=>{
+          this.cdr.detectChanges();
+          this.redirectUser();
+        });
+      },
+      (error) => {
         console.log(error);
-        this.snack.open('Detalles inválidos, vuelva a intentar!', 'Aceptar',{
-          duration:3000
-        })
+        this.snack.open('Detalles inválidos, vuelva a intentar!', 'Aceptar', {
+          duration: 3000
+        });
       }
-    )
-
+    );
   }
 
+  private redirectUser() {
+    if (this.loginService.getUserRole() == "ADMIN") {
+      this.router.navigate(['admin']);
+    } else if (this.loginService.getUserRole() == "BASICO") {
+      this.router.navigate(['user-dashboard']);
+    } else {
+      this.loginService.logout();
+    }
+    this.loginService.loginStatusSubject.next(true);
+  }
 }
