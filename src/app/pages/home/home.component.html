@@ -1,45 +1,70 @@
-<div class="max-w-2xl mx-auto p-4">
-  <div class="text-center mb-12">
-    <h1 class="text-4xl font-bold mb-8"><strong>Bienvenido al test de fobias</strong></h1>
-    <img src="assets/logo.jpeg" alt="Logo Terfobi" class="mx-auto mb-8 w-40 h-40">
+<div class="relative h-full w-full bg-white">
+  <div
+    class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]">
   </div>
+</div>
 
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold mb-8">Tratamos diversas fobias, como:</h2>
+<div class="max-w-7xl mx-auto p-4 mt-16">
+  <!-- Hero Section -->
+<div id="hero" class="bg-gray-100 py-12">
+  <div class="max-w-screen-xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="text-center md:text-left">
+      <h1 class="text-5xl font-extrabold text-gray-800 mb-4">Descubre y supera tus fobias</h1>
+      <img src="assets/logo.jpeg" alt="Logo Terfobi" class="mx-auto mb-8 w-40 h-40 md:hidden">
+      <p class="text-xl text-gray-700">Transforma tus miedos en oportunidades de crecimiento con Terfobi</p>
+    </div>
+    <div class="hidden md:block">
+      <img src="assets/tu-imagen.jpg" alt="Imagen descriptiva" class="w-full h-auto rounded-lg shadow-lg">
+    </div>
+  </div>
+</div>
+
+
+  <!-- Fobias Tratadas Carousel -->
+  <div id="fobias" class="text-center mb-12 pt-16">
+    <h2 class="text-4xl font-bold text-gray-700 mb-8">Tratamos diversas fobias:</h2>
     <div id="custom-carousel" class="relative w-full">
-      <!-- Carousel wrapper -->
-      <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-        <!-- Item 1 -->
+      <div class="overflow-hidden relative h-72 rounded-lg sm:h-80 xl:h-96 2xl:h-108">
         <div class="carousel-item active duration-700 ease-in-out">
-          <img src="assets/aracnofobia.jpeg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="Arañas">
+          <img src="assets/aracnofobia.jpeg"
+            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="Arañas">
         </div>
-        <!-- Item 2 -->
         <div class="carousel-item duration-700 ease-in-out">
-          <img src="assets/perros.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="Perros">
+          <img src="assets/perros.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+            alt="Perros">
         </div>
-        <!-- Item 3 -->
         <div class="carousel-item duration-700 ease-in-out">
-          <img src="assets/insecto.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="Insectos">
+          <img src="assets/insecto.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+            alt="Insectos">
         </div>
       </div>
-      <!-- Slider indicators -->
       <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-        <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 1" (click)="goToSlide(0)"></button>
-        <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 2" (click)="goToSlide(1)"></button>
-        <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 3" (click)="goToSlide(2)"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 1"
+          (click)="goToSlide(0)"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 2"
+          (click)="goToSlide(1)"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 3"
+          (click)="goToSlide(2)"></button>
       </div>
-      <!-- Slider controls -->
-      <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" (click)="prevSlide()">
-        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
-          <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <button type="button"
+        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+        (click)="prevSlide()">
+        <span
+          class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+          <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
           <span class="hidden">Previous</span>
         </span>
       </button>
-      <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" (click)="nextSlide()">
-        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
-          <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <button type="button"
+        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+        (click)="nextSlide()">
+        <span
+          class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+          <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
           <span class="hidden">Next</span>
@@ -48,13 +73,119 @@
     </div>
   </div>
 
-  <div class="text-center mb-12">
-    <section class="bg-white p-8 shadow-lg rounded-lg">
-      <h2 class="text-2xl font-semibold mb-4">Nosotros</h2>
-      <p class="text-lg mb-4">Somos jóvenes universitarios que se preocupan por la situación actual del tratamiento de fobias. Por esta razón, se decidió empezar este proyecto para facilitar el tratamiento de fobias mediante el uso de dispositivos móviles. Nuestra misión es ayudar a las personas a superar las fobias.</p>
-
+  <!-- Nosotros Section -->
+  <div id="about" class="text-center mb-12 pt-16">
+    <section>
+      <h2 class="text-3xl font-semibold mb-4">Nosotros</h2>
+      <p class="text-lg mb-4">Somos un grupo de jóvenes universitarios dedicados a mejorar la calidad de vida de las
+        personas al ayudarles a superar sus fobias a través de terapias innovadoras y accesibles. Nuestra misión es
+        proporcionar herramientas eficaces y apoyo constante.</p>
     </section>
   </div>
 
+  <!-- Servicios Section -->
+  <section id="services" class="bg-gray-100 py-8 pt-16">
+    <div class="max-w-screen-xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4 text-gray-700">Nuestros Servicios</h2>
+      <p class="text-lg mb-8 text-gray-600">Ofrecemos una variedad de servicios para ayudar a las personas a superar sus
+        fobias.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white shadow-lg rounded-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+          <div class="flex justify-center mb-4">
+            <span class="inline-block p-3 bg-blue-500 rounded-full">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 2a8 8 0 11-8 8 8.011 8.011 0 018-8zm3.546 5.879l-5.79 6.546a.75.75 0 01-1.152 0l-2.296-2.607a.75.75 0 111.152-.968l1.57 1.785 5.159-5.832a.75.75 0 011.168.076z">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2 text-gray-700">Terapia de Exposición</h3>
+          <p class="text-gray-600">Ayudamos a las personas a enfrentarse a sus miedos de manera controlada.</p>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+          <div class="flex justify-center mb-4">
+            <span class="inline-block p-3 bg-green-500 rounded-full">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9 2a7 7 0 016.485 4.743 2 2 0 01-1.631 2.57 4.993 4.993 0 00-8.034 0 2 2 0 01-1.63-2.57A7 7 0 019 2zm.372 6.94a1 1 0 01.976 0A5.014 5.014 0 0012.586 8a4.992 4.992 0 00-3.586-1.415A4.992 4.992 0 005.414 8a5.014 5.014 0 002.793 1.94zm-1.61 6.41a6.967 6.967 0 01-1.294-2.76 3 3 0 113.527 0 6.968 6.968 0 01-1.294 2.76z">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2 text-gray-700">Apoyo Psicológico</h3>
+          <p class="text-gray-600">Proporcionamos apoyo y guía a lo largo del proceso terapéutico.</p>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+          <div class="flex justify-center mb-4">
+            <span class="inline-block p-3 bg-red-500 rounded-full">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2a8 8 0 11-8 8 8.011 8.011 0 018-8zm1 13H9v2h2v-2zm0-9H9v7h2V6z"></path>
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2 text-gray-700">Terapia Cognitivo-Conductual</h3>
+          <p class="text-gray-600">Utilizamos técnicas cognitivo-conductuales para cambiar patrones de pensamiento
+            negativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Testimonios Section -->
+  <div id="testimonios" class="text-center mb-12 pt-16">
+    <h2 class="text-3xl font-bold mb-14">Testimonios</h2>
+    <div class="flex flex-wrap justify-center ">
+      <figure class="max-w-md mx-auto bg-gray-200 p-6 rounded-lg shadow-md ">
+        <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+            fill="currentColor" />
+        </svg>
+        <blockquote>
+          <p class="text-2xl font-medium text-gray-900">"Gracias a Terfobi, pude superar mi miedo a los insectos. Las
+            terapias online fueron muy efectivas."</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center mt-6 space-x-3">
+          <img class="w-6 h-6 rounded-full"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
+          <div class="flex items-center divide-x-2 divide-gray-500">
+            <div class="pr-3 font-medium text-gray-900">María Pérez</div>
+            <div class="pl-3 text-sm font-light text-gray-800">Paciente</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="max-w-md mx-auto bg-gray-200 p-6 rounded-lg shadow-md">
+        <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+            fill="currentColor" />
+        </svg>
+        <blockquote>
+          <p class="text-2xl font-medium text-gray-900">"Las consultas presenciales me ayudaron a enfrentar mi fobia a
+            los perros. Recomiendo mucho este servicio."</p>
+        </blockquote>
+        <figcaption class="flex items-center justify-center mt-6 space-x-3">
+          <img class="w-6 h-6 rounded-full"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
+          <div class="flex items-center divide-x-2 divide-gray-500">
+            <div class="pr-3 font-medium text-gray-900">Juan López</div>
+            <div class="pl-3 text-sm font-light text-gray-800">Paciente</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+
+
+  <!-- Contacto Section -->
+  <div id="contact" class="text-center mb-12 pt-16">
+    <section>
+      <h2 class="text-3xl font-semibold mb-4">Contacto</h2>
+      <p class="text-lg mb-4">Si tienes alguna pregunta o deseas más información, no dudes en contactarnos.</p>
+      <p>Email: contacto@terfobi.com</p>
+      <p>Teléfono: +51 123 456 789</p>
+    </section>
+  </div>
 </div>
